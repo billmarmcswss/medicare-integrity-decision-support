@@ -52,6 +52,8 @@ outputs/decision_briefs/*
 !outputs/figures/.gitkeep
 !outputs/tables/.gitkeep
 !outputs/decision_briefs/.gitkeep
+!outputs/figures/*.png
+!outputs/decision_briefs/*.md
 
 # ------------------------------
 # Large file formats
