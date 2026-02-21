@@ -1,0 +1,10 @@
+| Evidence ID | Source | Notebook (Cell ID) | Result | Decision Relevance | Status |
+|---|---|---|---|---|---|
+| E-DPI1-00 | CMS Part B PUF Provider–Service (raw CSV → interim parquet) | 00_data_intake_and_validation.ipynb (DPI1-00-PARQUET-01) | Interim parquet created; 9,660,647 rows | Enables peer grouping + signal engine for D-PI-1 | Accepted |
+| E-DPI1-01 | provider_rollup_v1.parquet | 02_signal_engine.ipynb (DPI1-02-COMPUTE-01 through COMPUTE-02) | Provider rollup with S1–S7, S5a, S5b; 1,175,281 providers | Supplies signal base for peer-adjusted scoring | Accepted |
+| E-DPI1-02 | provider_signal_scores_v1.parquet | 02_signal_engine.ipynb (DPI1-02-OUTLIER-01) | Peer-adjusted Z-scores computed for all 8 signals; 970,848 providers after MIN_BENES=50 filter; 204,433 excluded | Enables multi-signal agreement tier assignment | Accepted |
+| E-DPI1-03 | provider_tiered_v1.parquet | 02_signal_engine.ipynb (DPI1-02-TIER-01) | Tier 1: 22,400 — Tier 2: 39,016 — Tier 3: 68,721 — No Flag: 840,711 — Total: 970,848 | Supports D-PI-1 review prioritization | Accepted |
+| E-DPI1-04 | provider_review_queue_v1.parquet | 02_signal_engine.ipynb (DPI1-02-RANK-01) | Tier 1 providers ranked by allowed dollars; 22,400 total; top entry IDTF $132M, 5 signals flagged | Actionable review queue for D-PI-1 post MIN_BENES recalibration | Accepted |
+| E-DPI1-05 | decision_sensitivity_v1.png | D1_provider_review_queue.ipynb (D1-DPI1-VIZ-01) | Sensitivity visualization produced; current parameters capture $1.770B at 2.6% of allowed dollars | Demonstrates decision sensitivity to threshold assumptions | Accepted |
+| E-DPI1-06 | D1-DPI1-DIAG-01 diagnostic output | D1_provider_review_queue.ipynb (D1-DPI1-DIAG-01) | 20 extreme providers (Z>=8.0) identified; 17 of 20 single-signal only; U5 resolved — no data artifact found | Confirms signal engine integrity prior to recommendation | Accepted |
+| E-DPI1-07 | D-PI-1_recommendation_memo_v1.md | D1_provider_review_queue.ipynb (D1-DPI1-MEMO-01) | Formal recommendation memo produced; 500 providers; $1.770B allowed dollars; February 20, 2026 | First complete decision artifact for D-PI-1 | Accepted |

@@ -1,0 +1,75 @@
+# ------------------------------
+# Python artifacts
+# ------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ------------------------------
+# Jupyter artifacts
+# ------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ------------------------------
+# Environment / IDE
+# ------------------------------
+.env
+.venv
+env/
+venv/
+*.env
+
+.vscode/
+.idea/
+
+# ------------------------------
+# OS noise
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Data (NEVER COMMIT)
+# ------------------------------
+data/raw/*
+data/interim/*
+data/processed/*
+
+# Allow structure but block contents
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# ------------------------------
+# Heavy analytical outputs
+# ------------------------------
+outputs/figures/*
+outputs/tables/*
+outputs/decision_briefs/*
+
+!outputs/figures/.gitkeep
+!outputs/tables/.gitkeep
+!outputs/decision_briefs/.gitkeep
+
+# ------------------------------
+# Large file formats
+# ------------------------------
+*.parquet
+*.csv
+*.xlsx
+*.zip
+*.feather
+
+# ------------------------------
+# Logs
+# ------------------------------
+*.log
+
+# ------------------------------
+# Model artifacts (future-proofing)
+# ------------------------------
+*.pkl
+*.joblib
+*.model
