@@ -75,3 +75,6 @@ outputs/decision_briefs/*
 *.pkl
 *.joblib
 *.model
+
+# Local session management — not a project deliverable
+SESSION_CONTEXT.md
