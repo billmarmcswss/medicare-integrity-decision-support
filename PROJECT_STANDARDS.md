@@ -4,7 +4,7 @@ PURPOSE: Single source of truth for all project-wide standards including
 naming conventions, coding rules, visualization requirements,
 threshold design policy, and output integrity rules.
 Upload to Claude Project knowledge base as PROJECT_STANDARDS.md
-Last updated: 2026-02-23
+Last updated: 2026-03-01
 
 PROJECT-WIDE CODING STANDARDS
 These rules apply to every notebook, every module, every session.
@@ -284,7 +284,31 @@ This file is part of the project knowledge base.
 Upload to the Medicare Integrity Decision Support Claude Project.
 Do NOT push to GitHub — internal working document.
 
-Rule 12 — Notebook Cell Execution Protocol
+Rule 14 — Column Format Verification
+Never assume column value formats from documentation or prior module design.
+Always confirm actual string values via diagnostic before using them in
+assertions, mapping dictionaries, or logic.
+
+Known format discoveries:
+  anomaly_tier (provider_tiered_v1.parquet):
+    Uses string labels: Tier1_Review, Tier2_Monitor, Tier3_Watch, No_Flag
+    Not integers. Confirmed in DOPS1-02-VALIDATE-01 diagnostic.
+    Recorded in D-OPS-1 decision log.
+
+  pathway (monitoring_roster_v1.parquet):
+    Tier 2 providers carry label 'Tier 2 Only' (spaces, not underscore).
+    Not 'Tier2_Only'. Confirmed in DOPS2-02-VALIDATE-01 diagnostic.
+    Recorded in D-OPS-2 decision log.
+
+When a format discovery occurs:
+  1. Fix the assertion to match confirmed values
+  2. Add a markdown cell immediately before the affected PREP cell
+     documenting the discovery
+  3. Record in the module decision log
+  4. Add to this rule for future reference
+
+
+Rule 15 — Notebook Cell Execution Protocol
 Notebooks are built and executed one cell at a time. No exceptions.
 The sequence for every cell is:
 
@@ -304,3 +328,4 @@ anomaly_tier uses string labels (Tier1_Review, Tier2_Monitor, Tier3_Watch,
 No_Flag) not integers. Document any column format discoveries of this kind
 in a markdown cell immediately before the affected PREP cell, and record
 in the decision log.
+
