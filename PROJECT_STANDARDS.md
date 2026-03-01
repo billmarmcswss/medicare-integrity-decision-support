@@ -283,3 +283,17 @@ then comments, then SESSION_CONTEXT.md
 This file is part of the project knowledge base.
 Upload to the Medicare Integrity Decision Support Claude Project.
 Do NOT push to GitHub — internal working document.
+
+Rule 12 — Notebook Cell Execution Protocol
+Notebooks are built and executed one cell at a time. No exceptions.
+The sequence for every cell is:
+
+Claude produces one cell — markdown or code — and nothing else
+User copies cell into Jupyter and runs it
+User confirms output or reports any errors
+Claude addresses errors if present before proceeding
+Only after confirmation does Claude produce the next cell
+
+This protocol applies to every notebook in every module. Building multiple cells at once 
+prevents error isolation, makes troubleshooting impossible, and removes the 
+user's ability to verify analytical outputs as they are produced.
