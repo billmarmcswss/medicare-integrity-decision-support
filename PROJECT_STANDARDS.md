@@ -297,3 +297,10 @@ Only after confirmation does Claude produce the next cell
 This protocol applies to every notebook in every module. Building multiple cells at once 
 prevents error isolation, makes troubleshooting impossible, and removes the 
 user's ability to verify analytical outputs as they are produced.
+
+PENDING STANDARDS UPDATE:
+PROJECT_STANDARDS.md needs one addition — anomaly_tier column format note:
+anomaly_tier uses string labels (Tier1_Review, Tier2_Monitor, Tier3_Watch,
+No_Flag) not integers. Document any column format discoveries of this kind
+in a markdown cell immediately before the affected PREP cell, and record
+in the decision log.
