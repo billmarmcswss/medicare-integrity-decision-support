@@ -34,7 +34,7 @@ No notebook exists in this project without a decision justification.
 
 | Notebook | Role | Status |
 |---|---|---|
-| `D1_provider_review_queue.ipynb` | Frames Tier 1 queue as operational recommendation for PI actor | Pending |
+| `D-PI-1_provider_review_queue.ipynb` | Frames Tier 1 queue as operational recommendation for PI actor | Pending |
 
 ---
 
